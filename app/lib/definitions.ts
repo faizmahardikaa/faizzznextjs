@@ -17,9 +17,9 @@ export type Customer = {
 };
 
 export type Invoice = {
-  id: string; // Will be created on the database
+  id: string; 
   customer_id: string;
-  amount: number; // Stored in cents
+  amount: number; // 
   status: 'pending' | 'paid';
   date: string;
 };
