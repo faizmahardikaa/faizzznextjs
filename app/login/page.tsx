@@ -1,4 +1,6 @@
-'use client';
+'use client'; // pastikan ini di paling atas
+
+import { Suspense } from 'react';
 import AcmeLogo from '@/app/ui/acme-logo';
 import LoginForm from '@/app/ui/login-form';
 
@@ -11,7 +13,9 @@ export default function LoginPage() {
             <AcmeLogo />
           </div>
         </div>
-        <LoginForm />
+        <Suspense fallback={<p>Loading...</p>}>
+          <LoginForm />
+        </Suspense>
       </div>
     </main>
   );
