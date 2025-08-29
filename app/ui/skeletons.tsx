@@ -1,6 +1,6 @@
 // Loading animation
 const shimmer =
-  'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
+  "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
 
 export function CardSkeleton() {
   return (
@@ -209,6 +209,93 @@ export function InvoicesTableSkeleton() {
               <TableRowSkeleton />
               <TableRowSkeleton />
               <TableRowSkeleton />
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function CustomersTableSkeleton() {
+  return (
+    <div className="mt-6 flow-root">
+      <div className="inline-block min-w-full align-middle">
+        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
+          {/* Mobile view */}
+          <div className="md:hidden">
+            <div className="mb-2 w-full rounded-md bg-white p-4">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-8 rounded-full bg-gray-100"></div>
+                <div>
+                  <div className="h-6 w-24 rounded bg-gray-100"></div>
+                  <div className="mt-2 h-4 w-32 rounded bg-gray-100"></div>
+                </div>
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div className="h-6 w-16 rounded bg-gray-100"></div>
+                <div className="h-6 w-16 rounded bg-gray-100"></div>
+              </div>
+            </div>
+            <div className="mb-2 w-full rounded-md bg-white p-4">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-8 rounded-full bg-gray-100"></div>
+                <div>
+                  <div className="h-6 w-24 rounded bg-gray-100"></div>
+                  <div className="mt-2 h-4 w-32 rounded bg-gray-100"></div>
+                </div>
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div className="h-6 w-16 rounded bg-gray-100"></div>
+                <div className="h-6 w-16 rounded bg-gray-100"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop view */}
+          <table className="hidden min-w-full text-gray-900 md:table">
+            <thead className="rounded-lg text-left text-sm font-normal">
+              <tr>
+                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
+                  Name
+                </th>
+                <th scope="col" className="px-3 py-5 font-medium">
+                  Email
+                </th>
+                <th scope="col" className="px-3 py-5 font-medium">
+                  Total Invoices
+                </th>
+                <th scope="col" className="px-3 py-5 font-medium">
+                  Total Pending
+                </th>
+                <th scope="col" className="px-3 py-5 font-medium">
+                  Total Paid
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white">
+              {[...Array(6)].map((_, i) => (
+                <tr key={i} className="border-b last:border-0">
+                  <td className="px-4 py-4 sm:pl-6">
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-8 rounded-full bg-gray-100"></div>
+                      <div className="h-6 w-24 rounded bg-gray-100"></div>
+                    </div>
+                  </td>
+                  <td className="px-3 py-4">
+                    <div className="h-6 w-32 rounded bg-gray-100"></div>
+                  </td>
+                  <td className="px-3 py-4">
+                    <div className="h-6 w-12 rounded bg-gray-100"></div>
+                  </td>
+                  <td className="px-3 py-4">
+                    <div className="h-6 w-12 rounded bg-gray-100"></div>
+                  </td>
+                  <td className="px-3 py-4">
+                    <div className="h-6 w-12 rounded bg-gray-100"></div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
